@@ -26,7 +26,8 @@ gulp.task('js', function () {
             // {filename:'all.js',basename:'base',extname:'js'}
             path.basename += '.min'; // 在basename的基础上加上min，表示此文件为同名称文件的压缩版文件
         }))
-        .pipe(gulp.dest('./dist/js')); //将压缩后的文件进行输出到指定目录
+        .pipe(gulp.dest('./dist/js')) //将压缩后的文件进行输出到指定目录
+        .pipe($.connect.reload())
 }); 
  
 //开启一个任务（css:任务名称），对less文件处理，并将less文件处理后变成css文件
@@ -41,10 +42,12 @@ gulp.task('css', function () {
             path.basename += '.min'
         }))
         .pipe(gulp.dest('./dist/css'))
+        .pipe($.connect.reload())
 });
 
 gulp.task('img', function () { //将img下的源文件复制到build目录下
-    return gulp.src('./src/imgs/*').pipe(gulp.dest('./dist/imgs'))
+    return gulp.src('./src/imgs/*').pipe(gulp.dest('./dist/imgs')).pipe($.connect.reload())
+
 });
 
 //开启一个任务（index）
@@ -69,6 +72,9 @@ gulp.task('serve', function () {
 
 //创建一个监听，用于监听源文件index.html变化之后，及时通知其进行再次gulp index编译，并实时通知浏览器端视图刷新，做到自动刷新功能
 gulp.task('watch', function () {
+    gulp.watch('./src/less/*.less', ['css']);
+    gulp.watch('./src/js/*.js', ['js']);
+    gulp.watch('./src/imgs/*', ['img']);
     gulp.watch('./src/*.html', ['index']);
 });
 
