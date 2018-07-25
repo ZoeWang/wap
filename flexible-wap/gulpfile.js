@@ -1,7 +1,18 @@
 let gulp = require('gulp'); //引入gulp模块
 let $ = require('gulp-load-plugins')(); //引入gulp加载的所有插件（需要本地安装依赖所用到的插件）
+const pkg = require('./package.json');
+
 
 let path = {filename:'all.js',basename:'base',extname:'js'}
+var banner = [
+        '/*!',
+        ' * wap v<%= pkg.version %> ',
+        ' * Copyright <%= new Date().getFullYear() %> WangXiuFang, Inc.',
+        ' * Licensed under the <%= pkg.license %> license',
+        ' */',
+        ''
+    ].join('\n');
+
 //开启一个任务（js:任务名称），用于对JS文件的处理
 gulp.task('js', function () {
     //加上return之后，返回一个stream（gulp.src对象），目的为了确保task在执行的时候能够按照顺序进行，并依次完成，然后注入
@@ -10,6 +21,7 @@ gulp.task('js', function () {
         .pipe($.concat('all.js')) //合并js代码
         .pipe(gulp.dest('./dist/js')) //将合并后的js代码输出到build/js目录下
         .pipe($.uglify()) //进行压缩JS文件
+        .pipe($.header(banner, { pkg : pkg } ))     // 给生成文件统一 添加注释
         .pipe($.rename(function (path) { //修改压缩后的文件名称，防止覆盖上边的输出
             // {filename:'all.js',basename:'base',extname:'js'}
             path.basename += '.min'; // 在basename的基础上加上min，表示此文件为同名称文件的压缩版文件
@@ -22,6 +34,7 @@ gulp.task('css', function () {
     return gulp.src('./src/less/*.less')
         .pipe($.less()) //将less文件编译成css文件
         .pipe($.concat('all.css')) //合并编译后的css文件，并指定名称为all.css
+        .pipe($.header(banner, { pkg : pkg } ))  // 给生成文件统一 添加注释
         .pipe(gulp.dest('./dist/css')) //输出合并后的非压缩版all.css文件
         .pipe($.cleanCss()) //压缩合并后的css文件
         .pipe($.rename(function (path) {
