@@ -7,21 +7,21 @@
 *,body,p,h1,h2,h3,h4,h5,h6,ul,ol,li,dl,dt,dd,table,th,td,form,fieldset,legend,input,textarea,button,select,img {
     margin: 0;
     padding: 0;
-    font-family: 'microsoft yahei',Verdana,Arial,Helvetica,sans-serif;
+    font-family: PingFangSC-Regular,'microsoft yahei',Verdana,Arial,Helvetica,sans-serif;
 }
 html{
-  font-size: 62.5%;
+  .px2rem(font-size, 34);
 }
 /*字体按比例可改变自适应大小*/
 body {
     min-width: 320px;
-    font-family: 'microsoft yahei',Verdana,Arial,Helvetica,sans-serif;
     color: #333;
     -webkit-text-size-adjust: none;
+    background-color: #f4f4f4;
 }
 body,input,textarea,select,button,table {
-    font-size: 1.4rem;
-    line-height: 1.4rem;
+    .px2rem(font-size, 34);
+    .px2rem(line-height, 51);
 }
 img,fieldset {
     border: 0;
@@ -42,18 +42,18 @@ a {
 }
 /*自定义box模型*/
 .bsb(){
-  box-sizing:border-box;
+    box-sizing:border-box;
 }
 .bsc(){
-  box-sizing:content-box;
+    box-sizing:content-box;
 }
 
 /*show hide*/
 .hide{
-  display:none;
+    display:none;
 }
 .show{
-  display:block;
+    display:block;
 }
 /*清浮动*/
 .clearfix() {
@@ -70,17 +70,53 @@ a {
   .clearfix() 
 }
 
-//使用示例：
+//申请试用页面
+.layout-round {
+    display: block;
+    background: #FFFFFF;
+    box-shadow: 0 2/@baseFontSize*1rem 22/@baseFontSize*1rem 0 rgba(0,0,0,0.06);
+    .px2rem(border-radius, 10);
+    overflow: hidden;
+    .px2rem(margin-bottom, 28);
+}
 .container {
-	border: 5px solid yellow;
-	background-color: blue;
-	.px2rem(width, 700);
-    .px2rem(height, 240);
-    margin: 0 auto;
-    color: #fff;
+	padding: 40/75*1rem 34/75*1rem;
+    .px2rem(font-size, 34);
+    color: #333;
+    
+    .orange {
+        color: #FD7E23;
+    }
+    .intro {
+        .px2rem(margin-bottom, 54);
+    }
+    .tit {
+        padding: 30/75*1rem 0 0 28/75*1rem;
+        color: #151515;
+    }
+    .input-txt {
+        box-sizing: border-box;
+        display: block;
+        .px2rem(width, 595);
+        .px2rem(height, 102);
+        border: 2/75*1rem solid #D8D8D8;
+        .px2rem(font-size, 32);
+        padding: 32/75*1rem 16/75*1rem;
+        outline: 0;
+        margin: 66/75*1rem auto;
+    }
+    .btn {
+        display: block;
+        background: #FD7E23;
+        .px2rem(width, 681);
+        .px2rem(height, 96);
+        .px2rem(border-radius, 10);
+        .px2rem(font-size, 40);
+        .px2rem(line-height, 40);
+        color: #fff;
+        border: 0;
+        .px2rem(margin-top, 40);
+    }
 }
 
-//less翻译结果：
-// .container {
-//     height: 3.2rem;
-// }
+

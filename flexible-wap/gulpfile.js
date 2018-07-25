@@ -16,7 +16,7 @@ var banner = [
 //开启一个任务（js:任务名称），用于对JS文件的处理
 gulp.task('js', function () {
     //加上return之后，返回一个stream（gulp.src对象），目的为了确保task在执行的时候能够按照顺序进行，并依次完成，然后注入
-    return gulp.src(['./src/js/base.js', './src/js/index.js'])  //gulp.src() 指定源文件
+    return gulp.src('./src/js/*.js')  //gulp.src() 指定源文件  可以数组的形式gulp.src(['./src/js/base.js', './src/js/index.js'])
         .pipe($.babel()) //将es6代码编译成es2015
         .pipe($.concat('all.js')) //合并js代码
         .pipe(gulp.dest('./dist/js')) //将合并后的js代码输出到build/js目录下
