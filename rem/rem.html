@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>rem 响应式设置</title>
+</head>
+<body>
+	<script>
+		//获取html元素
+		var html = document.getElementsByTagName('html')[0]; 
+		//屏幕的宽度（兼容处理）
+		var w = document.documentElement.clientWidth || document.body.clientWidth;
+		//750这个数字是根据你的设计图的实际大小来的，所以值具体根据设计图的大小
+		html.style.fontSize = w / 750 + "px";
+
+		//以上代码实现了利用Js获取设备屏幕的宽度，并根据屏幕的宽度动态改变根元素html的font-siz属性的作用。比如说，对于iphone6而言，屏幕尺寸为750，那么在iPhone6下html的font-size为1px,所以1rem = 1px;对于iPhone5而言，屏幕尺寸为640，那么在iPhone5下html的font-size为640/750 = 0.85333px，所以1rem = 0.85333px。这样的话即使我们对一个元素设置同样的大小和单位，也会在不同的设备下显示不同的大小。比如说div{width:100rem},在iPhone6下它的宽度将等于100px，而在iPhone5下它的宽度等于100 * 0.85333 = 85.333px。这样我们就真正实现了移动端的自适应，怎么样，是不是很简单呢！
+
+
+	</script>
+</body>
+</html>
