@@ -1,0 +1,13 @@
+/*!
+ * wap v1.0.0 
+ * Copyright 2018 WangXiuFang, Inc.
+ * Licensed under the ISC license
+ */
+.icon-carous-cur {
+  display: inline-block;
+  width: 15px;
+  height: 15px;
+  background: url("../imgs/icon-carous-cur.png") 0 0 no-repeat;
+  -webkit-background-size: 100% 100%;
+          background-size: 100% 100%;
+}

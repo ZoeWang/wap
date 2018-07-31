@@ -1,0 +1,151 @@
+/*!
+ * wap v1.0.0 
+ * Copyright 2018 WangXiuFang, Inc.
+ * Licensed under the ISC license
+ */
+*,
+body,
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+ul,
+ol,
+li,
+dl,
+dt,
+dd,
+table,
+th,
+td,
+form,
+fieldset,
+legend,
+input,
+textarea,
+button,
+select,
+img {
+  margin: 0;
+  padding: 0;
+  font-family: PingFangSC-Regular, 'microsoft yahei', Verdana, Arial, Helvetica, sans-serif;
+}
+html {
+  font-size: 0.45333333rem;
+}
+/*字体按比例可改变自适应大小*/
+body {
+  min-width: 320px;
+  color: #333;
+  -webkit-text-size-adjust: none;
+  background-color: #f4f4f4;
+}
+body,
+input,
+textarea,
+select,
+button,
+table {
+  font-size: 0.45333333rem;
+  line-height: 0.68rem;
+}
+img,
+fieldset {
+  border: 0;
+}
+ul,
+ol {
+  list-style: none;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: normal;
+}
+em,
+address,
+i {
+  font-style: normal;
+}
+a {
+  color: #333;
+  text-decoration: none;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+/*自定义box模型*/
+/*show hide*/
+.hide {
+  display: none;
+}
+.show {
+  display: block;
+}
+/*清浮动*/
+.clearfix:before,
+.clearfix:after {
+  content: " ";
+  display: table;
+}
+.clearfix:after {
+  clear: both;
+}
+.layout-round {
+  display: block;
+  background: #FFFFFF;
+  -webkit-box-shadow: 0 0.02666667rem 0.29333333rem 0 rgba(0, 0, 0, 0.06);
+          box-shadow: 0 0.02666667rem 0.29333333rem 0 rgba(0, 0, 0, 0.06);
+  -webkit-border-radius: 0.13333333rem;
+          border-radius: 0.13333333rem;
+  overflow: hidden;
+  margin-bottom: 0.37333333rem;
+}
+.container {
+  padding: 0.53333333rem 0.45333333rem;
+  font-size: 0.45333333rem;
+  color: #333;
+}
+.container .orange {
+  color: #FD7E23;
+}
+.container .intro {
+  margin-bottom: 0.72rem;
+}
+.container .tit {
+  padding: 0.4rem 0 0 0.37333333rem;
+  color: #151515;
+}
+.container .input-txt {
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+  display: block;
+  width: 7.93333333rem;
+  height: 1.36rem;
+  border: 0.02666667rem solid #D8D8D8;
+  font-size: 0.42666667rem;
+  padding: 0.42666667rem 0.21333333rem;
+  outline: 0;
+  margin: 0.88rem auto;
+}
+.container .btn {
+  display: block;
+  background: #FD7E23;
+  width: 9.08rem;
+  height: 1.28rem;
+  -webkit-border-radius: 0.13333333rem;
+          border-radius: 0.13333333rem;
+  font-size: 0.53333333rem;
+  line-height: 0.53333333rem;
+  color: #fff;
+  border: 0;
+  margin-top: 0.53333333rem;
+  -webkit-transform: rotate(5deg);
+      -ms-transform: rotate(5deg);
+          transform: rotate(5deg);
+}

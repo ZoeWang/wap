@@ -1,0 +1,19 @@
+/*!
+ * wap v1.0.0 
+ * Copyright 2018 WangXiuFang, Inc.
+ * Licensed under the ISC license
+ */
+.icon-icon-carous-cur {
+  background: url('../imgs/sprite.png') no-repeat -136px 0px;
+  -webkit-background-size: 151px 135px;
+          background-size: 151px 135px;
+  width: 15px;
+  height: 15px;
+}
+.icon-icon-discuss {
+  background: url('../imgs/sprite.png') no-repeat 0px 0px;
+  -webkit-background-size: 151px 135px;
+          background-size: 151px 135px;
+  width: 134px;
+  height: 135px;
+}
