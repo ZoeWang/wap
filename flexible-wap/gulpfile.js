@@ -83,7 +83,7 @@ gulp.task('imgmin', function () { //将img下的源文件复制到build目录下
         // .pipe($.imagemin())          // 压缩图片
         .pipe(gulp.dest(build.basePath))
         .pipe($.connect.reload())
-
+        .pipe($.notify("完成：<%= file.relative %>!"))
 });
 
 // // 设置公共头尾
