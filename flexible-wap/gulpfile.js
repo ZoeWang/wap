@@ -102,7 +102,7 @@ gulp.task('html', function () {
     let target = gulp.src(src.html+"*.html"); //声明target保存，gulp.src源文件
     let sources = gulp.src([build.js+"*.js", build.css+"*.css"]); //声明source，gulp.src保存源资源文件
     return target.pipe($.fileInclude())     // 设置公共头尾
-        .pipe($.inject(sources, {ignorePath: 'dist', addRootSlash: false})) //将资源文件注入到html文件里，需要在index.html文件里，分别指定存放css文件和js文件的位置；inject（）这两个参数，分别设置了忽略的路径，因为导出后的index.html文件需要引入css文件和js文件以便正常运行
+        .pipe($.inject(sources, {ignorePath: 'build', addRootSlash: false})) //将资源文件注入到html文件里，需要在index.html文件里，分别指定存放css文件和js文件的位置；inject（）这两个参数，分别设置了忽略的路径，因为导出后的index.html文件需要引入css文件和js文件以便正常运行
         .pipe($.minifyHtml()) //对html文件进行压缩
         .pipe(gulp.dest(build.basePath))
         .pipe($.connect.reload()) //通知浏览器自动刷新（此方法配合视图刷新功能）
